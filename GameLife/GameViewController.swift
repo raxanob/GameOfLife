@@ -33,5 +33,21 @@ class GameViewController: UIViewController {
      scnView.backgroundColor = UIColor.white
 
     }
-
+    
+    func handleTap(_ gestureRecognize: UIGestureRecognizer) {
+        // retrieve the SCNView
+        let scnView = self.view as! SCNView
+        
+        // check what nodes are tapped
+        let p = gestureRecognize.location(in: scnView)
+        let hitResults = scnView.hitTest(p, options: [:])
+        
+        // check that we clicked on at least one object
+        if hitResults.count > 0 {
+           
+            // retrieved the first clicked object
+            let result = hitResults[0]
+            
+        }
+    }
 }
