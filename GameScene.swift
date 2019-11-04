@@ -66,6 +66,7 @@ public class GameScene: SCNScene {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
     }
     
     
