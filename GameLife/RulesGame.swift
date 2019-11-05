@@ -10,32 +10,34 @@ import UIKit
 import SceneKit
 
 class RulesGame: SCNScene {
-    
-    var callCell:[[CubeCell]] = []
-    
+            
     override init() {
         super.init()
-        
-        step(grid: Grid())
     }
     
-    func step(grid: Grid) {
+    func step(grid: Grid) -> Grid {
+        let grid2 = Grid()
         
-        for row in callCell {
-            for cell in row {
-                if cell.isAlive == 0 {
-                    let count = grid.getLiveNeighbourds(cell: cell) - 1
+        for row in 0..<grid.matrix.count {
+            for col in 0..<grid.matrix[0].count {
+                if grid.matrix[row][col].isAlive == 0 {
+                    let count = grid.getLiveNeighbourds(cell: grid.matrix[row][col])
                     if count == 3 {
-                        cell.isAlive = 1
+                        grid2.matrix[row][col].isAlive = 1
+                    } else {
+                        grid2.matrix[row][col].isAlive = 0
                     }
                 } else {
-                    let count = grid.getLiveNeighbourds(cell: cell)
-                    if count < 2 && count > 3 {
-                        cell.isAlive = 0
+                    let count = grid.getLiveNeighbourds(cell: grid.matrix[row][col]) - 1
+                    if count < 2 || count > 3 {
+                        grid2.matrix[row][col].isAlive = 0
+                    } else {
+                        grid2.matrix[row][col].isAlive = 1
                     }
                 }
             }
         }
+        return grid2
     }
     
     

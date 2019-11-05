@@ -11,8 +11,8 @@ import SceneKit
 class Grid {
     
     var matrix: [[CubeCell]] = []
-    let nRow = 15
-    let nCols = 10
+    let nRow = 8
+    let nCols = 8
     
     init() {
         for i in 0...nRow-1 { // percorrendo todas as linhas
@@ -38,7 +38,7 @@ class Grid {
         var count = 0
         for m in -1...1 {
             for n in -1...1 {
-                if let cell = getCell(x: m, y: n){
+                if let cell = getCell(x: cell.x + m, y: cell.y + n){
                     if cell.isAlive == 1{
                         count += 1
                     }

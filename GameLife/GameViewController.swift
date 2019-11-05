@@ -12,9 +12,9 @@ import SceneKit
 
 class GameViewController: UIViewController {
 
-    override func viewDidLoad() {
+    let scene = GameScene()
     
-        let scene = GameScene()
+    override func viewDidLoad() {
 
     // retrieve the SCNView
     let scnView = self.view as! SCNView
@@ -30,24 +30,11 @@ class GameViewController: UIViewController {
     scnView.showsStatistics = true
 
     // configure the view
-     scnView.backgroundColor = UIColor.white
-
+     scnView.backgroundColor = UIColor.black
     }
     
-    func handleTap(_ gestureRecognize: UIGestureRecognizer) {
-        // retrieve the SCNView
-        let scnView = self.view as! SCNView
-        
-        // check what nodes are tapped
-        let p = gestureRecognize.location(in: scnView)
-        let hitResults = scnView.hitTest(p, options: [:])
-        
-        // check that we clicked on at least one object
-        if hitResults.count > 0 {
-           
-            // retrieved the first clicked object
-            let result = hitResults[0]
-            
-        }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        scene.touchedScreen()
     }
 }
