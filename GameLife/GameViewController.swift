@@ -18,10 +18,10 @@ class GameViewController: UIViewController {
 
     // retrieve the SCNView
     let scnView = self.view as! SCNView
-
+    
     // set the scene to the view
     scnView.scene = scene
-    scnView.pointOfView?.position = SCNVector3Make(0, 0, 100)
+    scnView.pointOfView?.position = SCNVector3Make(0, 0, 0)
 
     // allows the user to manipulate the camera
     scnView.allowsCameraControl = true
@@ -31,6 +31,15 @@ class GameViewController: UIViewController {
 
     // configure the view
      scnView.backgroundColor = UIColor.black
+        
+    // create and add a camera to the scene
+    let cameraNode = SCNNode()
+    cameraNode.camera = SCNCamera()
+    scene.rootNode.addChildNode(cameraNode)
+            
+    // place the camera
+        cameraNode.position = SCNVector3(x: 0, y: -30, z: 10)
+        cameraNode.look(at: SCNVector3 (0, 0, 0))
     }
     
 
