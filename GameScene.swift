@@ -46,7 +46,6 @@ public class GameScene: SCNScene {
             var str: String = ""
             for j in 0..<cols {
                 str.append("\(grid.matrix[i][j].isAlive)")
-                
                 let boxGeometry = SCNBox(width: 0.6, height: 0.6, length: 0.6, chamferRadius: 0.05)
                 let boxCopy = SCNNode(geometry: boxGeometry)
 
@@ -68,7 +67,7 @@ public class GameScene: SCNScene {
     }
     
     func touchedScreen() {
-        z = z+1
+        z = z + 1
         nodes = []
         grid = rules.step(grid: grid)
         drowGrid()
