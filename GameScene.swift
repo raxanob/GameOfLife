@@ -16,15 +16,16 @@ public class GameScene: SCNScene {
     var grid = Grid()
     let rules = RulesGame()
     var nodes: [SCNNode] = []
+    var z: Float = 0
     
     override public init() {
         super.init()
         
-        grid.matrix[5][5].isAlive = 1
-        grid.matrix[6][6].isAlive = 1
-        grid.matrix[7][6].isAlive = 1
-        grid.matrix[7][5].isAlive = 1
-        grid.matrix[7][4].isAlive = 1
+        grid.matrix[1][3].isAlive = 1
+        grid.matrix[2][2].isAlive = 1
+        grid.matrix[2][3].isAlive = 1
+        grid.matrix[3][3].isAlive = 1
+        grid.matrix[3][4].isAlive = 1
 
         drowGrid()
     }
@@ -36,7 +37,7 @@ public class GameScene: SCNScene {
     
     func drowGrid() {
         
-        let offset: Int = 40
+        let offset: Int = 3
         let rows = grid.matrix.count
         let primeiraLinha = grid.matrix[0]
         let cols = primeiraLinha.count
@@ -45,6 +46,7 @@ public class GameScene: SCNScene {
             var str: String = ""
             for j in 0..<cols {
                 str.append("\(grid.matrix[i][j].isAlive)")
+                
                 let boxGeometry = SCNBox(width: 0.6, height: 0.6, length: 0.6, chamferRadius: 0.05)
                 let boxCopy = SCNNode(geometry: boxGeometry)
 
@@ -56,6 +58,7 @@ public class GameScene: SCNScene {
 
                 boxCopy.position.x = Float(i - offset)
                 boxCopy.position.y = Float(j - offset)
+                boxCopy.position.z = z
                 nodes.append(boxCopy)
                 self.rootNode.addChildNode(boxCopy)
 
@@ -65,9 +68,7 @@ public class GameScene: SCNScene {
     }
     
     func touchedScreen() {
-        for i in 0..<nodes.count{
-            nodes[i].removeFromParentNode()
-        }
+        z = z+1
         nodes = []
         grid = rules.step(grid: grid)
         drowGrid()

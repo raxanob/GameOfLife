@@ -24,8 +24,6 @@ class RulesGame: SCNScene {
                     let count = grid.getLiveNeighbourds(cell: grid.matrix[row][col])
                     if count == 3 {
                         grid2.matrix[row][col].isAlive = 1
-                    } else {
-                        grid2.matrix[row][col].isAlive = 0
                     }
                 } else {
                     let count = grid.getLiveNeighbourds(cell: grid.matrix[row][col]) - 1
