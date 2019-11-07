@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E024CF0523736A3400241459 /* Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E024CF0423736A3400241459 /* Pool.swift */; };
 		E034A9C5236CBF7900F43D84 /* CubeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E034A9C4236CBF7900F43D84 /* CubeCell.swift */; };
 		E06942C9236CCE4D0071A748 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06942C8236CCE4D0071A748 /* Grid.swift */; };
 		E076F0142374AF2E00DA3621 /* 428746__pauliperez1999__bubbles.wav in Resources */ = {isa = PBXBuildFile; fileRef = E076F0132374AF2E00DA3621 /* 428746__pauliperez1999__bubbles.wav */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E024CF0423736A3400241459 /* Pool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pool.swift; sourceTree = "<group>"; };
 		E034A9C4236CBF7900F43D84 /* CubeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeCell.swift; sourceTree = "<group>"; };
 		E06942C8236CCE4D0071A748 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		E076F0132374AF2E00DA3621 /* 428746__pauliperez1999__bubbles.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 428746__pauliperez1999__bubbles.wav; sourceTree = "<group>"; };
@@ -75,7 +73,6 @@
 				E034A9C4236CBF7900F43D84 /* CubeCell.swift */,
 				E06942C8236CCE4D0071A748 /* Grid.swift */,
 				E0FB0E98236C988F00CC29B1 /* RulesGame.swift */,
-				E024CF0423736A3400241459 /* Pool.swift */,
 				E076F0132374AF2E00DA3621 /* 428746__pauliperez1999__bubbles.wav */,
 				E0FB0E86236B76AA00CC29B1 /* Main.storyboard */,
 				E0FB0E89236B76AE00CC29B1 /* Assets.xcassets */,
@@ -163,7 +160,6 @@
 				E0FB0E81236B76AA00CC29B1 /* AppDelegate.swift in Sources */,
 				E0FB0E99236C988F00CC29B1 /* RulesGame.swift in Sources */,
 				E034A9C5236CBF7900F43D84 /* CubeCell.swift in Sources */,
-				E024CF0523736A3400241459 /* Pool.swift in Sources */,
 				E06942C9236CCE4D0071A748 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

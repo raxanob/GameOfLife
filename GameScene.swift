@@ -6,7 +6,6 @@
 //  Copyright © 2019 Rayane Xavier. All rights reserved.
 //
 
-
 import SceneKit
 
 public class GameScene: SCNScene, SCNSceneRendererDelegate {
