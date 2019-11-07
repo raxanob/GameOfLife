@@ -68,8 +68,9 @@ public class GameScene: SCNScene {
     }
     
     func touchedScreen() {
-        z = z+1
-        nodes = []
+        for i in 0..<nodes.count{
+            nodes[i].removeFromParentNode()
+        }
         grid = rules.step(grid: grid)
         drowGrid()
     }
