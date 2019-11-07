@@ -11,8 +11,8 @@ import SceneKit
 class Grid {
     
     var matrix: [[CubeCell]] = []
-    let nRow = 8
-    let nCols = 8
+    let nRow = 50
+    let nCols = 50
     
     init() {
         for i in 0...nRow-1 { // percorrendo todas as linhas
